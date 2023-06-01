@@ -11,9 +11,6 @@
 npm-debug.log
 yarn-error.log
 /src/app/pages/detail-product
-/src/app/pages/product
-/src/app/pages/cart
-/src/app/pages/checkout
 
 # IDEs and editors
 .idea/
