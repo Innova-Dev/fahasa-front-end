@@ -20,7 +20,6 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
     ProductDetailComponent,
     CartComponent,
     CheckoutComponent,
-    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
