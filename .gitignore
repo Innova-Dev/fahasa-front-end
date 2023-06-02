@@ -10,7 +10,7 @@
 /node_modules
 npm-debug.log
 yarn-error.log
-/src/app/pages/detail-product
+
 
 # IDEs and editors
 .idea/
