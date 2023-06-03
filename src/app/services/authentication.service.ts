@@ -11,10 +11,10 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) { }
 
-  userSignUp(data: IUser): Observable<IUser>{
+  userSignUp(data: IUser): Observable<any>{
     return this.http.post<any>(environment.SERVER_URL + '/auth/signup', data)
   } 
-  userSignIn(data: IUser): Observable<IUser>{
+  userSignIn(data: IUser): Observable<any>{
     return this.http.post<any>(environment.SERVER_URL + '/auth/signin', data)
   }
 }

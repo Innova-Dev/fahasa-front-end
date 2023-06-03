@@ -13,10 +13,9 @@ import { ProductComponent } from './pages/product/product.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
-
 import { LayoutAdminComponent } from './layout/LayoutAdmin/layout-admin/layout-admin.component';
-
 import { AuthComponent } from './pages/auth/auth.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,18 +26,16 @@ import { AuthComponent } from './pages/auth/auth.component';
     ProductDetailComponent,
     CartComponent,
     CheckoutComponent,
-
     LayoutAdminComponent,
-
     AuthComponent
-
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
