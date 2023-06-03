@@ -21,8 +21,8 @@ import { AuthComponent } from './pages/auth/auth.component';
     ProductDetailComponent,
     CartComponent,
     CheckoutComponent,
-    ProductDetailComponent,
     AuthComponent
+
   ],
   imports: [
     BrowserModule,
