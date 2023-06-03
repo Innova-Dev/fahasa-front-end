@@ -10,7 +10,7 @@ import { AuthComponent } from './pages/auth/auth.component';
 const routes: Routes = [
   { path: '', component: LayoutComponent, children: [
     { path: '', component: ProductComponent},
-    { path: 'product-detail', component: ProductDetailComponent},
+    { path: 'product/:_id', component: ProductDetailComponent},
     { path: 'cart', component: CartComponent},
     { path: 'checkout', component: CheckoutComponent},
     {path:'auth',component:AuthComponent}

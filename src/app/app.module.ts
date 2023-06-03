@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout/layout.component';
+import {  HttpClientModule } from '@angular/common/http';
 // import { ProductComponent } from './pages/product/product/product.component';
 // import { DetailProductComponent } from './pages/detail-product/detail-product/detail-product.component';
 // import { CartComponent } from './pages/carts/cart/cart.component';
@@ -27,7 +28,8 @@ import { AuthComponent } from './pages/auth/auth.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
