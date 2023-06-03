@@ -14,4 +14,7 @@ export class AuthenticationService {
   userSignUp(data: IUser): Observable<IUser>{
     return this.http.post<any>(environment.SERVER_URL + '/auth/signup', data)
   } 
+  userSignIn(data: IUser): Observable<IUser>{
+    return this.http.post<any>(environment.SERVER_URL + '/auth/signin', data)
+  }
 }
