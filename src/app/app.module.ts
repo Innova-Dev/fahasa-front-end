@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +14,11 @@ import { ProductComponent } from './pages/product/product.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+
+import { LayoutAdminComponent } from './layout/LayoutAdmin/layout-admin/layout-admin.component';
+
 import { AuthComponent } from './pages/auth/auth.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +28,11 @@ import { AuthComponent } from './pages/auth/auth.component';
     ProductDetailComponent,
     CartComponent,
     CheckoutComponent,
+
+    LayoutAdminComponent,
+
     AuthComponent
+
 
   ],
   imports: [
