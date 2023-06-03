@@ -1,23 +1,87 @@
 <div class="full-page">
-    <div id="login-form" class="login-page">
-      <div class="form-box">
-        <div class="button-box">
-          <div id="btn"></div>
-          <button type="button" (click)="login()" class="toggle-btn hover-signin">Đăng nhập</button>
-          <button type="button" (click)="register()" class="toggle-btn hover-signup">Đăng ký</button>
-        </div>
-        <form id="login" class="input-group-login">
-          <input type="email" class="input-field" placeholder="Nhập Email" required>
-          <input type="password" class="input-field" placeholder="Nhập mật khẩu" required>
-          <button type="submit" class="submit-btn">Đăng Nhập</button>
-        </form>
-        <form id="register" class="input-group-register">
-          <input type="text" class="input-field" placeholder="Họ và Tên" required>
-          <input type="email" class="input-field" placeholder="Nhập Email" required>
-          <input type="password" class="input-field" placeholder="Nhập mật khẩu" required>
-          <input type="password" class="input-field" placeholder="Nhập lại mật khẩu" required>
-          <button type="submit" class="submit-btn">Đăng kí</button>
-        </form>
+  <div id="login-form" class="login-page">
+    <div class="form-box">
+      <div class="button-box">
+        <div id="btn"></div>
+        <button type="button" (click)="login()" class="toggle-btn hover-signin">
+          Đăng nhập
+        </button>
+        <button
+          type="button"
+          (click)="register()"
+          class="toggle-btn hover-signup"
+        >
+          Đăng ký
+        </button>
       </div>
+      <div class="message">
+        <p *ngIf="messageSignUp" class="text-center msg-success">
+          {{ messageSignUp }}
+        </p>
+        <p *ngIf="messageSignIn" class="text-center msg-success">
+          {{ messageSignIn }}
+        </p>
+      </div>
+
+      <form
+        id="login"
+        class="input-group-login"
+        [formGroup]="handleFormSignIn"
+        (ngSubmit)="onHandleSignIn()"
+      >
+        <input
+          type="email"
+          class="input-field"
+          placeholder="Nhập Email"
+          formControlName="email"
+          required
+        />
+        <input
+          type="password"
+          class="input-field"
+          placeholder="Nhập mật khẩu"
+          formControlName="password"
+          required
+        />
+        <button type="submit" class="submit-btn">Đăng Nhập</button>
+      </form>
+
+      <form
+        [formGroup]="handleFormSignUp"
+        id="register"
+        class="input-group-register"
+        (ngSubmit)="onHandleSignUp()"
+      >
+        <input
+          type="text"
+          class="input-field"
+          formControlName="name"
+          placeholder="Họ và Tên"
+          required
+        />
+        <input
+          type="email"
+          class="input-field"
+          formControlName="email"
+          placeholder="Nhập Email"
+          required
+        />
+        <input
+          type="password"
+          class="input-field"
+          formControlName="password"
+          placeholder="Nhập mật khẩu"
+          required
+        />
+        <input
+          type="password"
+          class="input-field"
+          formControlName="confirmPassword"
+          placeholder="Nhập lại mật khẩu"
+          required
+        />
+        <button type="submit" class="submit-btn">Đăng kí</button>
+      </form>
     </div>
   </div>
+</div>
