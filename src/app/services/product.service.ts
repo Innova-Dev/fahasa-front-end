@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IProduct,IGetProduct } from '../interfaces/product';
-const apiUrl = 'http://127.0.0.1:8088/api/products';
+const apiUrl = 'http://127.0.0.1:8088/api/products/';
 
 @Injectable({
   providedIn: 'root'
