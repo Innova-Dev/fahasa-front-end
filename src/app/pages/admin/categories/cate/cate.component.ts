@@ -1,4 +1,4 @@
-import { CateService } from './../../../services/cate/cate.service';
+import { CateService } from 'src/app/services/cate/cate.service';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Component } from '@angular/core';
 import { ICate } from 'src/app/interfaces/cate';

@@ -16,9 +16,10 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
 import { LayoutAdminComponent } from './layout/LayoutAdmin/layout-admin/layout-admin.component';
 import { AuthComponent } from './pages/auth/auth.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CateComponent } from './pages/admin/cate/cate.component';
-import { ListCateComponent } from './pages/admin/listCate/list-cate/list-cate.component';
-import { EditCateComponent } from './pages/admin/edit-cate/edit-cate/edit-cate.component';
+import { CateComponent } from './pages/admin/categories/cate/cate.component';
+import { ListCateComponent } from './pages/admin/categories/list-cate/list-cate.component';
+import { EditCateComponent } from './pages/admin/categories/edit-cate/edit-cate.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { EditCateComponent } from './pages/admin/edit-cate/edit-cate/edit-cate.c
     AuthComponent,
     CateComponent,
     ListCateComponent,
-    EditCateComponent
+    EditCateComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

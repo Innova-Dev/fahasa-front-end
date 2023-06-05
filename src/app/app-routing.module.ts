@@ -6,20 +6,24 @@ import { CartComponent } from './pages/cart/cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { AuthComponent } from './pages/auth/auth.component';
-import { CateComponent } from './pages/admin/cate/cate.component';
-import { ListCateComponent } from './pages/admin/listCate/list-cate/list-cate.component';
-import { EditCateComponent } from './pages/admin/edit-cate/edit-cate/edit-cate.component';
-
+import { CateComponent } from './pages/admin/categories/cate/cate.component';
+import { ListCateComponent } from './pages/admin/categories/list-cate/list-cate.component';
+import { EditCateComponent } from './pages/admin/categories/edit-cate/edit-cate.component';
+import { LayoutAdminComponent } from './layout/LayoutAdmin/layout-admin/layout-admin.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 const routes: Routes = [
   { path: '', component: LayoutComponent, children: [
     { path: '', component: ProductComponent},
     { path: 'product/:_id', component: ProductDetailComponent},
     { path: 'cart', component: CartComponent},
     { path: 'checkout', component: CheckoutComponent},
-    {path:'auth',component:AuthComponent},
-    {path: 'add/cate', component:CateComponent},
-    {path: 'list', component: ListCateComponent},
-    {path: 'edit', component: EditCateComponent},
+    {path:'auth',component:AuthComponent}
+  ]
+  },
+  { path: 'admin', component: LayoutAdminComponent, children: [
+    {path: 'categories/add', component:CateComponent},
+    {path: 'categories', component: ListCateComponent},
+    {path: 'categories/edit', component: EditCateComponent},
   ]}
 
 ];

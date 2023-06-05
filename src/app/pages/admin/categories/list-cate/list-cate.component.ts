@@ -1,5 +1,5 @@
 import { ICate } from 'src/app/interfaces/cate';
-import { CateService } from './../../../../services/cate/cate.service';
+import { CateService } from '../../../../services/cate/cate.service';
 import { Component } from '@angular/core';
 
 @Component({
