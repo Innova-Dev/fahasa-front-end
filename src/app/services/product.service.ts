@@ -16,5 +16,7 @@ export class ProductService {
   getProduct(_id: any): Observable<IGetProduct> {
     return this.http.get<IGetProduct>(apiUrl + _id);
   }
-  
+  deleteProduct(_id:string):Observable<IProduct>{
+    return this.http.delete<IProduct>(`${apiUrl}`+_id)
+  }
 }
