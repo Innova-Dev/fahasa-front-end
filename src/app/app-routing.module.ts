@@ -6,6 +6,8 @@ import { CartComponent } from './pages/cart/cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { AuthComponent } from './pages/auth/auth.component';
+import { LayoutAdminComponent } from './layout/LayoutAdmin/layout-admin/layout-admin.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', component: LayoutComponent, children: [
@@ -14,6 +16,10 @@ const routes: Routes = [
     { path: 'cart', component: CartComponent},
     { path: 'checkout', component: CheckoutComponent},
     {path:'auth',component:AuthComponent}
+  ]
+  },
+  { path: 'admin', component: LayoutAdminComponent, children: [
+    {path: '', component: DashboardComponent}
   ]}
   
 ];

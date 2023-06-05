@@ -16,6 +16,7 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
 import { LayoutAdminComponent } from './layout/LayoutAdmin/layout-admin/layout-admin.component';
 import { AuthComponent } from './pages/auth/auth.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CartComponent,
     CheckoutComponent,
     LayoutAdminComponent,
-    AuthComponent
+    AuthComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
