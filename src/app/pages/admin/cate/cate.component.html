@@ -1,0 +1,5 @@
+<form [formGroup]="cateForm" (ngSubmit)="onHandleSubmit()">
+    <input type="" formControlName="name">
+    <!-- <input type="file" (change)="onImageSelected($event)" accept="image/*"> -->
+    <button type="submit" [disabled]="!cateForm.valid">Submit</button>
+</form>
