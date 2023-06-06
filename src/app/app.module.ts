@@ -25,6 +25,7 @@ import { ProductEditComponent } from './pages/admin/products/product-edit/produc
 import { ProductListComponent } from './pages/admin/products/product-list/product-list.component';
 import { ProductItemComponent } from './pages/admin/products/product-item/product-item.component';
 
+import { CartService } from './services/cart.service';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ import { ProductItemComponent } from './pages/admin/products/product-item/produc
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IProduct,IProductImage } from 'src/app/interfaces/product';
 import { ProductService } from 'src/app/services/product.service';
+import { CartService } from 'src/app/services/cart.service';
 import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-product-detail',
@@ -9,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductDetailComponent {
   product: IProduct = {} as IProduct;
-  constructor(private productService: ProductService, 
+  constructor(private productService: ProductService, private cartService: CartService,
     private route: ActivatedRoute){
       this.route.paramMap.subscribe(params=>{
         const id = params.get(`_id`)
@@ -28,4 +29,7 @@ export class ProductDetailComponent {
         });
       }
     }
+    addToCart(product: any): void {
+    this.cartService.addToCart(product);
+  }
 }
