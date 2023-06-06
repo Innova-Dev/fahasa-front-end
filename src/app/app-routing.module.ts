@@ -11,6 +11,7 @@ import { ListCateComponent } from './pages/admin/categories/list-cate/list-cate.
 import { EditCateComponent } from './pages/admin/categories/edit-cate/edit-cate.component';
 import { LayoutAdminComponent } from './layout/LayoutAdmin/layout-admin/layout-admin.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { ProductListComponent } from './pages/admin/products/product-list/product-list.component';
 const routes: Routes = [
   { path: '', component: LayoutComponent, children: [
     { path: '', component: ProductComponent},
@@ -24,7 +25,9 @@ const routes: Routes = [
     {path: 'categories/add', component:CateComponent},
     {path: 'categories', component: ListCateComponent},
     {path: 'categories/edit', component: EditCateComponent},
-    
+    {path:'products',children:[
+      {path:'',component:ProductListComponent}
+    ]}
   ]}
 
 ];
