@@ -1,1 +1,15 @@
-<p>product-item works!</p>
+<td scope="row">{{index+1}}</td>
+<td scope="row">{{product.name}}</td>
+<td scope="row">{{product.list_price}}</td>
+<td scope="row">{{product.original_price}}</td>
+<td scope="row">{{product.description}}</td>
+<td scope="row" *ngFor="let image of product.images">
+<img width="200" [src]="image.base_url" alt="">
+</td>
+<td><button class="btn btn-danger" (click)="removeItem(product._id)">Delete</button>
+    <button class="btn btn-primary" [routerLink]=" product._id + '/edit'">Update</button>
+</td>
+
+
+
+               
