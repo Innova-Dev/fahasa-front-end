@@ -22,4 +22,8 @@ export class ProductService {
   updateProduct(product:IProduct):Observable<IProduct>{
     return this.http.patch<IProduct>(`${apiUrl}${product._id}`,product)
   }
+  addProduct(product:IProduct):Observable<IProduct>{
+    return this.http.patch<IProduct>(`${apiUrl}`,product)
+  }
+  
 }
