@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component,EventEmitter,Input,Output} from '@angular/core';
 
 @Component({
-  selector: 'app-product-item',
+  selector: 'tr[app-product-item]',
   templateUrl: './product-item.component.html',
   styleUrls: ['./product-item.component.css']
 })
 export class ProductItemComponent {
-
+  @Input() product:any
+  @Input() index:any
 }

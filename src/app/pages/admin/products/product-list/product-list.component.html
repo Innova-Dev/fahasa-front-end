@@ -1,1 +1,26 @@
+<div class="table-responsive">
+    <table class="table table-primary">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">List-price</th>
+                <th scope="col">Original_price</th>
+                <th scope="col">Images</th>
+                <th scope="col">Description</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr app-product-item
+            *ngFor="let product of products ; let i = index"
+            [product]="product"
+            [index]="i"
 
+            >
+                
+            </tr>
+           
+        </tbody>
+    </table>
+</div>
