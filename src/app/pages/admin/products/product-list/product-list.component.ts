@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+
 import { ProductService } from 'src/app/services/product.service';
 import { IProduct } from 'src/app/interfaces/products';
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -8,6 +10,7 @@ import { IProduct } from 'src/app/interfaces/products';
 })
 export class ProductListComponent {
   products:IProduct[]=[]
+
     constructor(private productService:ProductService){
       this.productService.getProducts().subscribe(data=>{
         this.products=data
@@ -16,4 +19,5 @@ export class ProductListComponent {
         console.log(error)
       })
     }
+
 }

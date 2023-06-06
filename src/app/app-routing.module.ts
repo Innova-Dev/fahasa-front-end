@@ -25,10 +25,10 @@ const routes: Routes = [
     {path: 'categories/add', component:CateComponent},
     {path: 'categories', component: ListCateComponent},
     {path: 'categories/edit', component: EditCateComponent},
-    {path: 'products', children:[
+    {path:'products',children:[
       {path:'',component:ProductListComponent}
     ]}
-  ]}
+
 
 ];
 

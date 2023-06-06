@@ -8,4 +8,5 @@ import { Component,EventEmitter,Input,Output} from '@angular/core';
 export class ProductItemComponent {
   @Input() product:any
   @Input() index:any
+
 }
