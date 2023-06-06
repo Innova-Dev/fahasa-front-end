@@ -28,7 +28,8 @@ const routes: Routes = [
     {path:'products',children:[
       {path:'',component:ProductListComponent}
     ]}
-
+  ]
+  }
 
 ];
 

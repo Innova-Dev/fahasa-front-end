@@ -19,5 +19,9 @@ export class ProductListComponent {
         console.log(error)
       })
     }
-
+    removeItem(_id:any){
+      this.productService.deleteProduct(_id).subscribe(()=>{
+        this.products=this.products.filter(item=>item._id!==_id)
+      })
+    }
 }
