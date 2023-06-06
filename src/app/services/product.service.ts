@@ -19,4 +19,7 @@ export class ProductService {
   deleteProduct(_id:string):Observable<IProduct>{
     return this.http.delete<IProduct>(`${apiUrl}`+_id)
   }
+  updateProduct(product:IProduct):Observable<IProduct>{
+    return this.http.patch<IProduct>(`${apiUrl}${product._id}`,product)
+  }
 }
