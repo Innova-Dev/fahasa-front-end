@@ -1,1 +1,11 @@
-<p>product-edit works!</p>
+<form [formGroup]="productForm" (ngSubmit)="onHandleEdit()">
+    <label for="">name</label>
+    <input type="text" formControlName="name">
+    <label for="">list_price</label>
+    <input type="number" formControlName="list_price">
+    <label for="">original_price</label>
+    <input type="number" formControlName="original_price">
+    <label for="">description</label>
+    <input type="text" formControlName="description">
+    <button type="submit">Submit</button>
+</form>
