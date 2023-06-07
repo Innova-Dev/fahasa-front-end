@@ -5,20 +5,20 @@
         <div class="sidebar-img">
             <div class="">
                 <div class="sub-sidebar-img" *ngIf="product.images">
-                    <img width="70" class="demo w3-opacity w3-hover-opacity-off" *ngFor="let image of product.images" [src]="image.base_url" alt="Product Image" style="cursor:pointer" onclick="currentDiv(1)">
+                    <img width="70" class="demo w3-opacity w3-hover-opacity-off"  [src]="product.images[0]" alt="Product Image" style="cursor:pointer" onclick="currentDiv(1)">
                 </div>
                 <div class="sub-sidebar-img" *ngIf="product.images">
-                    <img width="70" class="demo w3-opacity w3-hover-opacity-off" *ngFor="let image of product.images" [src]="image.base_url" alt="Product Image" style="cursor:pointer" onclick="currentDiv(1)">
+                    <img width="70" class="demo w3-opacity w3-hover-opacity-off" [src]="product.images[0]" alt="Product Image" style="cursor:pointer" onclick="currentDiv(1)">
                 </div>
                 <div class="sub-sidebar-img" *ngIf="product.images">
-                    <img width="70" class="demo w3-opacity w3-hover-opacity-off" *ngFor="let image of product.images" [src]="image.base_url" alt="Product Image" style="cursor:pointer" onclick="currentDiv(1)">
+                    <img width="70" class="demo w3-opacity w3-hover-opacity-off"  [src]="product.images[0]" alt="Product Image" style="cursor:pointer" onclick="currentDiv(1)">
                 </div>
                 
             </div>
         </div>
         <div class="main-img">
             <div *ngIf="product.images">
-                <img class="mySlides" width="400" *ngFor="let image of product.images" [src]="image.base_url" alt="Product Image" style="">
+                <img class="mySlides" width="400" [src]="product.images[0]" alt="Product Image" style="">
             </div>
             <img class="mySlides" width="400" src="../../../assets/3900000125482-2.jpg" style="display:none">
             <img class="mySlides" width="400" src="../../../assets/3900000125482-3.jpg" style="display:none">

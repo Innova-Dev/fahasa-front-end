@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IProduct,IProductImage } from 'src/app/interfaces/product';
+import { IProduct } from 'src/app/interfaces/product';
 import { ProductService } from 'src/app/services/product.service';
 import { CartService } from 'src/app/services/cart.service';
 import { ActivatedRoute } from '@angular/router';
@@ -21,14 +21,14 @@ export class ProductDetailComponent {
       })
     }
 
-    showProductImages(product: IProduct) {
-      if (product.images) {
-        product.images.forEach((image: IProductImage) => {
-          console.log(image.base_url);
-          // Do something with the product images
-        });
-      }
-    }
+    // showProductImages(product: IProduct) {
+    //   if (product.images) {
+    //     product.images.forEach((image: IProductImage) => {
+    //       console.log(image.base_url);
+    //       // Do something with the product images
+    //     });
+    //   }
+    // }
     addToCart(product: any): void {
     this.cartService.addToCart(product);
   }
