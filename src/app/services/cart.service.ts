@@ -8,7 +8,7 @@ export class CartService {
   private cartItemCountSubject: BehaviorSubject<number> = new BehaviorSubject<number>(this.cartItemCount);
   private cartItems: any[] = [];
 
-  constructor() {
+  constructor() { 
     // Kiểm tra xem có dữ liệu giỏ hàng trong Local Storage hay không
     const storedCartItems = localStorage.getItem('cartItems');
     if (storedCartItems) {

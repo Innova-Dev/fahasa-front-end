@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IProduct, IProductImage  } from 'src/app/interfaces/products';
+import { IProduct  } from 'src/app/interfaces/product';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -15,17 +15,13 @@ export class ProductComponent {
     this.productService.getProducts().subscribe(data => {
       this.products = data
       console.log(data)
+      console.log(this.products);
+      
     }, error => {
       console.log(error)
+
     })
   }
-  showProductImages(product: IProduct) {
-    if (product.images) {
-      product.images.forEach((image: IProductImage) => {
-        console.log(image.base_url);
-        // Do something with the product images
-      });
-    }
-  }
+ 
   
 }

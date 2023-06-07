@@ -116,8 +116,9 @@
     <div class="products">
         <div [routerLink]="['/product', product._id]"  class="product" *ngFor="let product of products" >
             <div *ngIf="product.images">
-                <img width="200" *ngFor="let image of product.images" [src]="image.base_url" alt="Product Image">
+                <img width="200"  [src]="product.images[0]" alt="Product Image">
             </div>
+            
             <p class="name-product">{{product.name}}</p>
             <p class="price-product">{{product.list_price}} đ</p>
             <p class="price-sale">{{product.original_price}} đ</p> 
