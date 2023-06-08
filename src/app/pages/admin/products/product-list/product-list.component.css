@@ -1,0 +1,26 @@
+.table-primary {
+    background-color: #f8f9fa; /* Màu nền cho bảng */
+  }
+  
+  .table-primary th,
+  .table-primary td {
+    border: 1px solid #dee2e6; /* Đường viền cho các ô */
+    padding: 8px; /* Khoảng cách giữa nội dung và viền của ô */
+  }
+  
+  .table-primary th {
+    background-color: #007bff; /* Màu nền cho tiêu đề cột */
+    color: #fff; /* Màu chữ cho tiêu đề cột */
+  }
+  
+  .invalid-message {
+    background-color: #f8d7da; /* Màu nền đỏ nhạt cho thông báo lỗi */
+    color: #721c24; /* Màu chữ đỏ đậm cho thông báo lỗi */
+  }
+  
+  .is-invalid {
+    color: red; /* Màu chữ đỏ cho trường không hợp lệ */
+  }
+  .table-primary th:last-child {
+    width: 100%;
+  }

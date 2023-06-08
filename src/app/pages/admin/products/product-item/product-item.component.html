@@ -6,6 +6,8 @@
 <td scope="row" *ngFor="let image of product.images">
 <img width="200" [src]="image.base_url" alt="">
 </td>
-<td><button class="btn btn-danger" (click)="removeItem(product._id)">Delete</button>
-    <button class="btn btn-primary" [routerLink]=" product._id + '/edit'">Update</button>
-</td>
+<td class="butoon-a">
+    <button class="btn btn-delete" (click)="removeItem(product._id)">Delete</button>
+    <button class="btn btn-update" [routerLink]="[product._id, 'edit']">Update</button>
+  </td>
+  
