@@ -1,0 +1,12 @@
+.btn-delete {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .btn-update {
+    background-color: #007bff;
+    color: #fff;
+  }
+  .butoon-a{
+    display: flex;
+  }

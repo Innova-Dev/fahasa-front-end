@@ -28,7 +28,7 @@ const routes: Routes = [
     {path: 'categories/edit', component: EditCateComponent},
     {path:'products',children:[
       {path:'',component:ProductListComponent},
-      {path:'edit/:_id',component:ProductEditComponent}
+      {path:':_id/edit',component:ProductEditComponent}
     ]}
   ]
   }
