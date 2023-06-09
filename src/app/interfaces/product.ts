@@ -10,6 +10,7 @@ export interface IProduct {
     size?:string | null | undefined;
     cover_type?:string | null | undefined;
     num_of_pages?:string | null | undefined;
+    total?: number
 }
 export interface IGetProduct {
     message: string;
