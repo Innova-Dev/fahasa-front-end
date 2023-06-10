@@ -58,9 +58,15 @@ export class ProductEditComponent {
         description: this.productForm.value.description || ''
       };
       this.productService.updateProduct(product).subscribe(data => {
+        const confirmationMessage = "Bạn có chắc chắn muốn cập nhật không?";
+    if (window.confirm(confirmationMessage)) {
         console.log(data);
         this.router.navigate(['/admin/products']);
+    }
       });
     }
+    
   }
+  
+  
 }

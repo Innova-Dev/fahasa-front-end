@@ -19,9 +19,14 @@ export class ProductListComponent {
         console.log(error)
       })
     }
+    confirmDelete(_id: any) {
+      if (confirm("Bạn có muốn xóa sản phẩm này không?")) {
+        this.productService.deleteProduct(_id).subscribe(() => {
+          this.products = this.products.filter(item => item._id !== _id);
+        });
+      }
+    }
     removeItem(_id:any){
-      this.productService.deleteProduct(_id).subscribe(()=>{
-        this.products=this.products.filter(item=>item._id!==_id)
-      })
+     this.confirmDelete(_id)
     }
 }

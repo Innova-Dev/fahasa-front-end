@@ -18,7 +18,7 @@ export class ProductAddComponent {
     name: [''],
     list_price: [0],
     original_price: [0],
-    images: [[]], // Khởi tạo images với một mảng rỗng
+    images: [''], // Khởi tạo images với một mảng rỗng
     description: [''],
   });
 
