@@ -3,8 +3,8 @@
 <td scope="row">{{product.list_price}}</td>
 <td scope="row">{{product.original_price}}</td>
 <td scope="row">{{product.description}}</td>
-<td scope="row" *ngFor="let image of product.images">
-<img width="200" [src]="image.base_url" alt="">
+<td scope="row" *ngIf="product.images">
+<img width="200" [src]="product.images[0]" alt="">
 </td>
 <td class="butoon-a">
     <button class="btn btn-delete" (click)="removeItem(product._id)">Delete</button>
