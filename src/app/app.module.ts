@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout/layout.component';
-import {  HttpClientModule } from '@angular/common/http';
+import {  HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 // import { ProductComponent } from './pages/product/product/product.component';
 // import { DetailProductComponent } from './pages/detail-product/detail-product/detail-product.component';
 // import { CartComponent } from './pages/carts/cart/cart.component';
@@ -26,6 +26,7 @@ import { ProductListComponent } from './pages/admin/products/product-list/produc
 import { ProductItemComponent } from './pages/admin/products/product-item/product-item.component';
 
 import { CartService } from './services/cart.service';
+import { AuthInterceptor } from './services/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,11 @@ import { CartService } from './services/cart.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [CartService],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass:AuthInterceptor,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
