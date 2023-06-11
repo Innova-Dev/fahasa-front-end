@@ -1,10 +1,10 @@
 .table-primary {
-    background-color: #f8f9fa; /* Màu nền cho bảng */
+    background-color: black; /* Màu nền cho bảng */
   }
   
   .table-primary th,
   .table-primary td {
-    border: 1px solid #dee2e6; /* Đường viền cho các ô */
+    border: 1px solid black; /* Đường viền cho các ô */
     padding: 8px; /* Khoảng cách giữa nội dung và viền của ô */
   }
   
@@ -61,4 +61,13 @@
     .action-button:hover {
         background-color: #45a049;
     }
+    .form-sub{
+      margin: 0 auto; 
+      width: 50vw;
+      text-align: center;
+      margin-top: 20px;
+      border-radius: 20px;
+      background-color: white;
+      padding: 20px;
+  }
 

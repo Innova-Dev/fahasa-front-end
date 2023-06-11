@@ -28,7 +28,7 @@ export class ProductAddComponent {
         name: this.productForm.value.name || '',
         list_price: this.productForm.value.list_price || 0,
         original_price: this.productForm.value.original_price || 0,
-        images: Array.isArray(this.productForm.value.images) ? this.productForm.value.images : [], // Chuyển đổi images thành mảng nếu không phải là mảng
+        images: this.productForm.value.images?.split(','), // Chuyển đổi images thành mảng nếu không phải là mảng
         description: this.productForm.value.description || '',
       };
 

@@ -1,14 +1,16 @@
 <h3>Thêm sách</h3>
-<form [formGroup]="productForm" (ngSubmit)="onHandleSubmit()" style="padding-top: 20px;">
-    <label >Tên sách</label>
-    <input type="text" formControlName="name" placeholder="Nhập tên sách">
-    <label >Giá gốc</label>
-    <input type="text" formControlName="list_price" >
-    <label >Giá khuyến mãi</label>
-    <input type="text" formControlName="original_price">
-    <label >Nhập ảnh </label>
-    <input type="text" formControlName="images" placeholder="Nhập ảnh">
-    <label >Mô tả sản phẩm </label>
-    <input type="text" formControlName="description" placeholder="Nhập mô tả">
-    <button type="submit" [disabled]="!productForm.valid">submit</button>
-</form>
+<div class="form-sub">
+    <form [formGroup]="productForm" (ngSubmit)="onHandleSubmit()" style="padding-top: 20px">
+        <label >Tên sách</label>
+        <input class="border-input" type="text" formControlName="name" placeholder="Nhập tên sách">
+        <label >Giá gốc</label>
+        <input  class="border-input" type="text" formControlName="list_price" >
+        <label >Giá khuyến mãi</label>
+        <input  class="border-input" type="text" formControlName="original_price">
+        <label >Nhập ảnh </label>
+        <textarea  class="border-input" type="text" formControlName="images" rows="10" placeholder="Nhập ảnh"></textarea>
+        <label >Mô tả sản phẩm </label>
+        <input  class="border-input" type="text" formControlName="description" placeholder="Nhập mô tả">
+        <button type="submit" [disabled]="!productForm.valid">submit</button>
+    </form>
+</div>
