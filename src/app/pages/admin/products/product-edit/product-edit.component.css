@@ -1,42 +1,15 @@
-.product-form {
-    width: 400px;
-    margin: 0 auto;
-  }
-  
-  label {
-    font-weight: bold;
-  }
-  
-  input[type="text"],
-  input[type="number"] {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .error-message {
-    color: red;
-    margin-bottom: 10px;
-  }
-  
-  button[type="submit"] {
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-  textarea.form-control {
-    width: 100%; /* Độ rộng chiếm toàn bộ khung chứa */
-    height: 200px; /* Chiều cao 200px */
-  }
-  
-  
-  
+.border-input{
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+}
+.form-sub{
+  margin: 0 auto; 
+  width: 50vw;
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: white;
+  padding: 20px;
+}

@@ -1501,3 +1501,9 @@ table tr:hover {
 .form-cate .btn-primary:hover {
     opacity: 0.9;
 }
+.border-input{
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
