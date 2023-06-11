@@ -1,16 +1,32 @@
 <h3>Thêm sách</h3>
-<div class="form-sub">
-    <form [formGroup]="productForm" (ngSubmit)="onHandleSubmit()" style="padding-top: 20px">
-        <label >Tên sách</label>
-        <input class="border-input" type="text" formControlName="name" placeholder="Nhập tên sách">
-        <label >Giá gốc</label>
-        <input  class="border-input" type="text" formControlName="list_price" >
-        <label >Giá khuyến mãi</label>
-        <input  class="border-input" type="text" formControlName="original_price">
-        <label >Nhập ảnh </label>
-        <textarea  class="border-input" type="text" formControlName="images" rows="10" placeholder="Nhập ảnh"></textarea>
-        <label >Mô tả sản phẩm </label>
-        <input  class="border-input" type="text" formControlName="description" placeholder="Nhập mô tả">
-        <button type="submit" [disabled]="!productForm.valid">submit</button>
+<div class="container">
+    <form [formGroup]="productForm" (ngSubmit)="onHandleSubmit()"  class="form-cate">
+        <button routerLink="categories" class="btn btn-warning">Danh sách</button>
+        <hr>
+        <div class="row mb-4">
+            <div class="col">
+                <div class="form-outline">
+                    <p class="form-label">Tên sách</p>
+                    <input type="text" class="form-control"  formControlName="name" placeholder="Nhập tên sách">
+                </div>
+                <div class="form-outline boxung">
+                    <p >Giá gốc</p>
+                    <input  type="text" class="form-control" formControlName="list_price" >
+                </div>
+                <div class="form-outline boxung">
+                    <p >Giá khuyến mãi</p>
+                    <input  type="text" class="form-control" formControlName="original_price">
+                </div>
+                <div class="form-outline boxung">
+                    <p >Nhập ảnh </p>
+                    <input  type="text" class="form-control" formControlName="images" rows="10" placeholder="Nhập ảnh" />
+                </div>
+                <div class="form-outline boxung">
+                    <p >Mô tả sản phẩm </p>
+                    <textarea type="text" class="form-control" formControlName="description" placeholder="Nhập mô tả"></textarea>
+                </div>
+            </div>
+        </div>
+        <button type="submit" [disabled]="!productForm.valid" class="btn btn-primary btn-block mb-4">submit</button>
     </form>
 </div>

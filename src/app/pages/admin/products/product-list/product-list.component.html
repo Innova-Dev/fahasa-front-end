@@ -1,26 +1,37 @@
-<div class="form-sub">
-    <table class="">
-        <thead>
-            <tr>
-                <th style="width: 5%" scope="">#</th>
-                <th style="width: 10%" scope="">Name</th>
-                <th style="width: 5%" scope="">List-price</th>
-                <th style="width: 10%" scope="">Original_price</th>
-                <th style="width: 50%" scope="">Description</th>
-                <th style="width: 10%" style="width: 5%" scope="">Images</th>
-                <th style="width: 30%" scope="">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr app-product-item
-            *ngFor="let product of products ; let i = index"
-            [product]="product"
-            [index]="i"
-            (onRemove)="removeItem(product._id)"
-            >
-                
-            </tr>
-           
-        </tbody>
-    </table>
+<div class="container">
+    <button routerLink="add" class="btn btn-warning">Add Product</button>
+    <div class="row">
+        <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+            <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <!-- <tr>
+                        <th width="20%" class="text-center">STT</th>
+                        <th>Name</th>
+                        <th colspan="2">Action</th>
+                    </tr> -->
+                    <tr>
+                        <th class="text-center">STT</th>
+                        <th >Name</th>
+                        <th >List-price</th>
+                        <th >Original_price</th>
+                        <th >Description</th>
+                        <th >Images</th>
+                        <th >Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr app-product-item
+                    *ngFor="let product of products ; let i = index"
+                    [product]="product"
+                    [index]="i"
+                    (onRemove)="removeItem(product._id)"
+                    >
+                        
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
 </div>
