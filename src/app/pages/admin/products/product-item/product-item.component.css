@@ -1,17 +1,20 @@
 .btn-delete {
-    background-color: #dc3545;
-    border-radius: 0.4rem; 
-    color: #fff;
-    padding:10px 30px;
-    text-align: center; margin-left: 5px;
-  }
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: red;
+  color:white;
+  cursor: pointer;
+margin-bottom: 10px;  }
   
   .btn-update {
-    background-color: #007bff;
-    border-radius: 0.4rem; 
-    color: #fff;
-    padding:10px 30px;
-    text-align: center;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: green;
+    color:white;
+    cursor: pointer;
+  margin-bottom: 10px;
   }
   .butoon-a{
     
