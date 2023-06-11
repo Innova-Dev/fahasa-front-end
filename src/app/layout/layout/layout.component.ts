@@ -6,10 +6,18 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent {
+
   cartItemCount: number = 0;
+  isLogin: boolean = false;
+
+  userInfo: any = {}
 
   constructor(private cartService: CartService) {
     this.updateCartItemCount();
+    this.userInfo = JSON.parse(localStorage.getItem('user') || '{}')
+    if(this.userInfo.accessToken){
+      this.isLogin = true;
+    }
   }
 
   updateCartItemCount(): void {

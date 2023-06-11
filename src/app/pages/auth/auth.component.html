@@ -15,11 +15,11 @@
         </button>
       </div>
       <div class="message">
-        <p *ngIf="messageSignUp" class="text-center msg-success">
-          {{ messageSignUp }}
-        </p>
-        <p *ngIf="messageSignIn" class="text-center msg-success">
-          {{ messageSignIn }}
+        <p
+          *ngIf="messageNotice.status !== null"
+          class="text-center msg-{{ messageNotice.status }}"
+        >
+          {{ messageNotice.message }}
         </p>
       </div>
 

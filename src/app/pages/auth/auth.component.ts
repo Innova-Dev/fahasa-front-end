@@ -11,14 +11,12 @@ import { Router } from '@angular/router';
 })
 export class AuthComponent {
 
-    constructor(private formSignUp: FormBuilder,
-      private formSignIn: FormBuilder,
+    constructor(private formBuilder: FormBuilder,
       private AuthenticationService: AuthenticationService) {
 
     }
 
-    messageSignUp: string = ''
-    messageSignIn: string = ''
+    messageNotice : {status: boolean | null, message: string | null} = {status: null, message: null};
 
     //css
     login() {
@@ -28,7 +26,7 @@ export class AuthComponent {
       x.style.left = '50px';
       y.style.left = '450px';
       z.style.left = '0px';
-      this.messageSignUp = ''
+      this.messageNotice = {status: null, message: null}
     }
   
     register() {
@@ -38,17 +36,17 @@ export class AuthComponent {
       x.style.left = '-400px';
       y.style.left = '50px';
       z.style.left = '130px';
-      this.messageSignIn = ''
+      this.messageNotice = {status: null, message: null}
     }
 
-    handleFormSignUp = this.formSignUp.group({
+    handleFormSignUp = this.formBuilder.group({
       name: [''],
       email: [''],
       password: [''],
       confirmPassword: ['']
     })
 
-    handleFormSignIn = this.formSignIn.group({
+    handleFormSignIn = this.formBuilder.group({
       email: [''],
       password: ['']
     })
@@ -59,12 +57,13 @@ export class AuthComponent {
         password: this.handleFormSignIn.value.password  || "",
       }
       this.AuthenticationService.userSignIn(userSignIn).subscribe(data => {
-        if(data.status) {
-          this.messageSignIn = data.message
-          const accessToken = data.accessToken; // Lấy token từ phản hồi của server
-          localStorage.setItem('accessToken', accessToken);
+          this.messageNotice = {status: true, message: data.message}
+          const {user, accessToken} = data;
+          localStorage.setItem('user', JSON.stringify(user, user.accessToken = accessToken));
           window.location.href = '/'
-        }
+      },
+      error => {
+        this.messageNotice = {status: false, message: error.error.message}
       })
     }
 
@@ -76,9 +75,10 @@ export class AuthComponent {
         confirmPassword: this.handleFormSignUp.value.confirmPassword  || ""
       }
       this.AuthenticationService.userSignUp(userSignUp).subscribe(data => {
-        if(data.status) {
-          this.messageSignUp = data.message
-        }
+        this.messageNotice = {status: true, message: data.message}
+      },
+      (error) => {
+        this.messageNotice = {status: false, message: error.error.message}
       })
     }
 }

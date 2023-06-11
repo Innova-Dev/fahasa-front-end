@@ -5,8 +5,8 @@
   <div class="header">
     <div class="logo">
       <a routerLink="/">
-      <img src="../../../assets/img/fahasa_logo.png " alt="" />
-    </a>
+        <img src="../../../assets/img/fahasa_logo.png " alt="" />
+      </a>
     </div>
     <div class="search">
       <div class="menu">
@@ -30,14 +30,20 @@
           <a href="">Thông báo</a>
         </li>
         <li>
-          <i class="fa-solid fa-cart-shopping"></i><span class="badge">{{ cartItemCount }}</span><br />
-          <a routerLink="cart" 
-            >Giỏ hàng</a>
+          <i class="fa-solid fa-cart-shopping"></i
+          ><span class="badge">{{ cartItemCount }}</span
+          ><br />
+          <a routerLink="cart">Giỏ hàng</a>
         </li>
         <a href=""></a>
         <li>
           <i class="fa-solid fa-user"></i><br />
-          <a routerLink="auth">Tài khoản</a>
+          <ng-container *ngIf="isLogin; else auth">
+            <a routerLink="auth">{{ userInfo.name }}</a>
+          </ng-container>
+          <ng-template #auth>
+            <a routerLink="auth">Tài khoản</a>
+          </ng-template>
         </li>
       </ul>
     </div>
