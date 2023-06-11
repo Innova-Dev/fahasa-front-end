@@ -34,7 +34,7 @@
                 </div>
                 <div class="quantity-total">
                   <div class="quantity-detail">
-                    <input type="number" name="" [value]="product.total"/>
+                    <input type="number" name="" [value]="product.total" (change)="updateTotalPrice($event, product._id)"/>
                   </div>
                   <div class="total">
                     <p class="price-product"  *ngIf="product.total && product.original_price">{{product.total * product.original_price}} đ</p>
@@ -51,7 +51,7 @@
       </div>
       <div class="pay">
         <div class="pay-total">
-          <h3>Tổng số tiền (gồm VAT)</h3>
+          <h3>Tổng số tiền</h3>
           <p>{{total}}đ</p>
         </div>
         <button class="btn-pay">Mua ngay</button>

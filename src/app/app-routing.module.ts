@@ -15,13 +15,14 @@ import { ProductListComponent } from './pages/admin/products/product-list/produc
 import { ProductEditComponent } from './pages/admin/products/product-edit/product-edit.component';
 import { ProductAddComponent } from './pages/admin/products/product-add/product-add.component';
 const routes: Routes = [
-  { path: '', component: LayoutComponent, children: [
-    { path: '', component: ProductComponent},
-    { path: 'product/:_id', component: ProductDetailComponent},
-    { path: 'cart', component: CartComponent},
-    { path: 'checkout', component: CheckoutComponent},
-    {path:'auth',component:AuthComponent}
-  ]
+  {
+    path: '', component: LayoutComponent, children: [
+      { path: '', component: ProductComponent },
+      { path: 'product/:_id', component: ProductDetailComponent },
+      { path: 'cart', component: CartComponent },
+      { path: 'checkout', component: CheckoutComponent },
+      { path: 'auth', component: AuthComponent }
+    ]
   },
   { path: 'admin', component: LayoutAdminComponent, children: [
     {path:'categories',children:[
