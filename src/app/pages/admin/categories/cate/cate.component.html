@@ -1,12 +1,15 @@
-<button routerLink="categories" class="btn btn-warning">Add Categories</button>
-<form [formGroup]="cateForm" (ngSubmit)="onHandleSubmit()">
-    <div class="row mb-4">
-        <div class="col">
-            <div class="form-outline">
-                <label class="form-label" for="form3Example1">First name</label>
-                <input type="text" class="form-control"  formControlName="name" />
+<div class="container">
+    <form class="form-cate" [formGroup]="cateForm" (ngSubmit)="onHandleSubmit()">
+        <button routerLink="categories" class="btn btn-warning">Danh sách</button>
+        <hr>
+        <div class="row mb-4">
+            <div class="col">
+                <div class="form-outline">
+                    <p class="form-label" for="form3Example1">First name</p>
+                    <input type="text" class="form-control"  formControlName="name" />
+                </div>
             </div>
         </div>
-    </div>
-    <button type="submit" [disabled]="!cateForm.valid" class="btn btn-primary btn-block mb-4">Submit</button>
-</form>
+        <button type="submit" [disabled]="!cateForm.valid" class="btn btn-primary btn-block mb-4">Submit</button>
+    </form>
+</div>
