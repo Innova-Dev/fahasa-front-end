@@ -23,6 +23,7 @@ export class ProductEditComponent {
       name: ['', Validators.required],
       list_price: [0, [Validators.required, Validators.min(0)]],
       original_price: [0, [Validators.required, Validators.min(0)]],
+      images: ['', Validators.required],
       description: ['', Validators.required]
     });
 
@@ -37,6 +38,7 @@ export class ProductEditComponent {
           name: data.product.name,
           list_price: data.product.list_price,
           original_price: data.product.original_price,
+          images: data.product.images,
           description: data.product.description
         });
       });
@@ -55,6 +57,7 @@ export class ProductEditComponent {
         name: this.productForm.value.name || '',
         list_price: this.productForm.value.list_price || 0,
         original_price: this.productForm.value.original_price || 0,
+        images: this.productForm.value.images || '',
         description: this.productForm.value.description || ''
       };
       this.productService.updateProduct(product).subscribe(data => {
