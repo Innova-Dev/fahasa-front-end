@@ -18,6 +18,11 @@
         <div *ngIf="productForm.get('original_price')?.errors?.['required']">Original Price is required</div>
         <div *ngIf="productForm.get('original_price')?.errors?.['min']">Original Price must be a positive number</div>
     </div>
+    <label for="name">Image</label>
+    <input type="text" id="images" formControlName="images" class="form-control">
+    <div *ngIf="productForm.get('images')?.invalid && productForm.get('images')?.touched" class="error-message">
+        <div *ngIf="productForm.get('images')?.errors?.['required']">Name is required</div>
+    </div>
     
     <label for="description">Description</label>
     <textarea id="description" formControlName="description" class="form-control"></textarea>
