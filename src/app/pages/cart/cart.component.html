@@ -1,6 +1,8 @@
 <div id="container">
   <div class="cart">
-    <h3>Giỏ hàng <span>( 2 sản phẩm)</span></h3>
+    <h3>
+      Giỏ hàng <span>( {{ products.length }} sản phẩm)</span>
+    </h3>
     <div class="option">
       <div class="option-cart">
         <div>
@@ -25,26 +27,37 @@
                     alt=""
                   />
                   <div class="content-cart">
-                    <p>{{product.name}}</p>
+                    <p>{{ product.name }}</p>
                     <div class="price-cart">
-                      <p class="price-product">{{product.original_price}} đ</p>
-                      <p class="price-sale">{{product.list_price}} đ</p>
+                      <p class="price-product">
+                        {{ product.original_price }} đ
+                      </p>
+                      <p class="price-sale">{{ product.list_price }} đ</p>
                     </div>
                   </div>
                 </div>
                 <div class="quantity-total">
                   <div class="quantity-detail">
-                    <input type="number" name="" [value]="product.total" (change)="updateTotalPrice($event, product._id)"/>
+                    <input
+                      type="number"
+                      name=""
+                      [value]="product.total"
+                      (input)="updateTotalPrice($event, product._id)"
+                    />
                   </div>
                   <div class="total">
-                    <p class="price-product"  *ngIf="product.total && product.original_price">{{product.total * product.original_price}} đ</p>
+                    <p
+                      class="price-product"
+                      *ngIf="product.total && product.original_price"
+                    >
+                      {{ product.total * product.original_price }} đ
+                    </p>
                   </div>
                 </div>
               </div>
               <div class="hr">
                 <p class=""></p>
               </div>
-
             </div>
           </div>
         </div>
@@ -52,7 +65,7 @@
       <div class="pay">
         <div class="pay-total">
           <h3>Tổng số tiền</h3>
-          <p>{{total}}đ</p>
+          <p>{{ total }}đ</p>
         </div>
         <button class="btn-pay">Mua ngay</button>
         <p class="title-sale">(Giảm giá trên web chỉ áp dụng cho bán lẻ)</p>

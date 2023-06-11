@@ -14,6 +14,7 @@ import { DashboardComponent } from './pages/admin/dashboard/dashboard.component'
 import { ProductListComponent } from './pages/admin/products/product-list/product-list.component';
 import { ProductEditComponent } from './pages/admin/products/product-edit/product-edit.component';
 import { ProductAddComponent } from './pages/admin/products/product-add/product-add.component';
+import { AuthGuard } from './auth.guard';
 const routes: Routes = [
   {
     path: '', component: LayoutComponent, children: [
@@ -24,7 +25,7 @@ const routes: Routes = [
       { path: 'auth', component: AuthComponent }
     ]
   },
-  { path: 'admin', component: LayoutAdminComponent, children: [
+  { path: 'admin', component: LayoutAdminComponent,canActivate: [AuthGuard], children: [
     {path:'categories',children:[
       {path:'',component:ListCateComponent},
 

@@ -17,4 +17,8 @@ export class AuthenticationService {
   userSignIn(data: IUser): Observable<any>{
     return this.http.post<any>(environment.SERVER_URL + '/auth/signin', data)
   }
+
+  isAuthenticated() {
+    return JSON.parse(localStorage.getItem('user')!) || null;
+  }
 }

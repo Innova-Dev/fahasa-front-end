@@ -55,7 +55,7 @@
 }
 
 .input-group-register {
-	top: 120px;
+	top: 150px;
 	position: absolute;
 	width: 280px;
 	transition: .5s;
@@ -119,10 +119,18 @@
 	text-align: center;
 }
 
-.message>.msg-success {
+.message>.msg-true {
 	padding: 5px 10px 5px 10px;
 	background-color: #198754;
 	color: white;
 	margin-bottom: 10px;
-	border-radius: 12px;
+	border-radius: 4px;
+}
+
+.message>.msg-false {
+	padding: 5px 10px 5px 10px;
+	background-color: #aa2323;
+	color: white;
+	margin-bottom: 10px;
+	border-radius: 4px;
 }
