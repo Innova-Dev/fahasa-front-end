@@ -1,36 +1,49 @@
-<div class="form-sub">
-
-    <form [formGroup]="productForm" (ngSubmit)="onHandleEdit()" class="product-form">
-        <label for="name">Name</label>
-        <input  type="text" id="name" formControlName="name" class="form-control border-input">
-        <div *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched" class="error-message">
-            <div *ngIf="productForm.get('name')?.errors?.['required']">Name is required</div>
+<h3>Thêm sách</h3>
+<div class="container">
+    <form [formGroup]="productForm" (ngSubmit)="onHandleEdit()" class="form-cate">
+        <button routerLink="categories" class="btn btn-warning">Danh sách</button>
+        <hr>
+        <div class="row mb-4">
+            <div class="col">
+                <div class="form-outline">
+                    <p class="form-label">Tên sách</p>
+                    <input type="text" class="form-control"  formControlName="name" placeholder="Nhập tên sách">
+                    <div *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched" class="error-message">
+                        <div *ngIf="productForm.get('name')?.errors?.['required']">Name is required</div>
+                    </div>
+                </div>
+                <div class="form-outline boxung">
+                    <p >Giá gốc</p>
+                    <input  type="text" class="form-control" formControlName="list_price" >
+                    <div *ngIf="productForm.get('list_price')?.invalid && productForm.get('list_price')?.touched" class="error-message">
+                        <div *ngIf="productForm.get('list_price')?.errors?.['required']">List Price is required</div>
+                        <div *ngIf="productForm.get('list_price')?.errors?.['min']">List Price must be a positive number</div>
+                    </div>
+                </div>
+                <div class="form-outline boxung">
+                    <p >Giá khuyến mãi</p>
+                    <input  type="text" class="form-control" formControlName="original_price">
+                    <div *ngIf="productForm.get('original_price')?.invalid && productForm.get('original_price')?.touched" class="error-message">
+                        <div *ngIf="productForm.get('original_price')?.errors?.['required']">Original Price is required</div>
+                        <div *ngIf="productForm.get('original_price')?.errors?.['min']">Original Price must be a positive number</div>
+                    </div>
+                </div>
+                <div class="form-outline boxung">
+                    <p >Nhập ảnh </p>
+                    <input  type="text" class="form-control" formControlName="images" rows="10" placeholder="Nhập ảnh" />
+                    <div *ngIf="productForm.get('images')?.invalid && productForm.get('images')?.touched" class="error-message">
+                        <div *ngIf="productForm.get('images')?.errors?.['required']">Name is required</div>
+                    </div>
+                </div>
+                <div class="form-outline boxung">
+                    <p >Mô tả sản phẩm </p>
+                    <textarea type="text" class="form-control" formControlName="description" placeholder="Nhập mô tả"></textarea>
+                    <div *ngIf="productForm.get('description')?.invalid && productForm.get('description')?.touched" class="error-message border-input">
+                        <div *ngIf="productForm.get('description')?.errors?.['required']">Description is required</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <label for="list_price">List Price</label>
-        <input type="number" id="list_price" formControlName="list_price" class="form-control border-input">
-        <div *ngIf="productForm.get('list_price')?.invalid && productForm.get('list_price')?.touched" class="error-message">
-            <div *ngIf="productForm.get('list_price')?.errors?.['required']">List Price is required</div>
-            <div *ngIf="productForm.get('list_price')?.errors?.['min']">List Price must be a positive number</div>
-        </div>
-        
-        <label for="original_price">Original Price</label>
-        <input type="number" id="original_price" formControlName="original_price" class="form-control border-input">
-        <div *ngIf="productForm.get('original_price')?.invalid && productForm.get('original_price')?.touched" class="error-message">
-            <div *ngIf="productForm.get('original_price')?.errors?.['required']">Original Price is required</div>
-            <div *ngIf="productForm.get('original_price')?.errors?.['min']">Original Price must be a positive number</div>
-        </div>
-        <label for="name">Image</label>
-        <input type="text" id="images" formControlName="images" class="form-control  border-input">
-        <div *ngIf="productForm.get('images')?.invalid && productForm.get('images')?.touched" class="error-message">
-            <div *ngIf="productForm.get('images')?.errors?.['required']">Name is required</div>
-        </div>
-        
-        <label for="description">Description</label>
-        <textarea id="description" formControlName="description" class="form-control  border-input"  rows="10"></textarea>
-        <div *ngIf="productForm.get('description')?.invalid && productForm.get('description')?.touched" class="error-message border-input">
-            <div *ngIf="productForm.get('description')?.errors?.['required']">Description is required</div>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" [disabled]="!productForm.valid" class="btn btn-primary btn-block mb-4">submit</button>
     </form>
 </div>
