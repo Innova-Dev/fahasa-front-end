@@ -24,23 +24,24 @@ const routes: Routes = [
       { path: 'auth', component: AuthComponent }
     ]
   },
-  {
-    path: 'admin', component: LayoutAdminComponent, children: [
-      {
-        path: 'categories', children: [
-          { path: '', component: ListCateComponent },
-          { path: 'add', component: CateComponent },
-          { path: ':_id/edit', component: EditCateComponent }
-        ]
-      },
-      {
-        path: 'products', children: [
-          { path: '', component: ProductListComponent },
-          { path: 'add', component: ProductAddComponent },
-          { path: ':_id/edit', component: ProductEditComponent }
-        ]
-      }
-    ]
+  { path: 'admin', component: LayoutAdminComponent, children: [
+    {path:'categories',children:[
+      {path:'',component:ListCateComponent},
+
+      {path:'add',component:CateComponent},
+ 
+      {path:'edit/:_id',component:EditCateComponent}
+
+    ]},
+    {path:'products',children:[
+      {path:'',component:ProductListComponent},
+
+      {path:'add',component:ProductAddComponent},
+ 
+      {path:':_id/edit',component:ProductEditComponent}
+
+    ]}
+  ]
   }
 
 ];
