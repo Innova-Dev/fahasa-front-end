@@ -75,4 +75,51 @@
         </div>
     </div>
 </div>
+    <div>
+        <h1>KIỂM TRA LẠI ĐƠN HÀNG</h1>
+        <div class="product-cart">
+            <div *ngFor="let product of products">
+              <div class="detail-product-cart">
+                <div class="checkbox"></div>
+                <div class="img-product-cart">
+                  <img
+                    width="100"
+                    *ngIf="product.images"
+                    [src]="product.images[0]"
+                    alt=""
+                  />
+                  <div class="content-cart">
+                    <p>{{ product.name }}</p>
+                    <div class="price-cart">
+                      <p class="price-product">
+                        {{ product.original_price }} đ
+                      </p>
+                      <p class="price-sale">{{ product.list_price }} đ</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="quantity-total">
+                  <div class="quantity-detail">
+                    <input
+                      type="number"
+                      name=""
+                      [value]="product.total"
+                    />
+                  </div>
+                  <div class="total">
+                    <p
+                      class="price-product"
+                      *ngIf="product.total && product.original_price"
+                    >
+                      {{ product.total * product.original_price }} đ
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="hr">
+                <p class=""></p>
+              </div>
+            </div>
+          </div>
+    </div>
 </div>
