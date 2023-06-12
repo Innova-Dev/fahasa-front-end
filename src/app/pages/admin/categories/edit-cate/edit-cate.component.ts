@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./edit-cate.component.css']
 })
 export class EditCateComponent {
-  cate!: ICate;
+  cate!: any;
   cateForm = this.formBuilder.group({
     name: [''],
   })
@@ -23,6 +23,7 @@ export class EditCateComponent {
       const _id = param.get('_id');
       this.cateService.getCate(_id).subscribe(data => {
         this.cate = data
+        console.log(this.cate)
         this.cateForm.patchValue({
           name: data.name
         })
@@ -32,9 +33,10 @@ export class EditCateComponent {
   onHandleEdit() {
     if(this.cateForm.value) {
       const product: ICate= {
-        _id: this.cate._id,
+        _id: this.cate.data._id,
         name: this.cateForm.value.name || ""
       }
+      console.log(product)
       this.cateService.updateCate(product).subscribe(data => {
         console.log(data)
         alert('Cap nhat thanh cong')
