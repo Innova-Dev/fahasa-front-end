@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { ICate } from 'src/app/interfaces/cate';
 import { CateService } from 'src/app/services/cate/cate.service';
+import { FormBuilder } from '@angular/forms';
+import { Component } from '@angular/core';
+import { ICate } from 'src/app/interfaces/cate';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-edit-cate',
@@ -12,34 +12,33 @@ import { CateService } from 'src/app/services/cate/cate.service';
 export class EditCateComponent {
   cate!: ICate;
   cateForm = this.formBuilder.group({
-    name: ['']
+    name: [''],
   })
-  
   constructor(
     private cateService: CateService,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder
   ) {
-    
     this.route.paramMap.subscribe(param => {
-      const id = param.get('_id');
-      this.cateService.getCate(id).subscribe(cate => {
-        this.cate = cate;
+      const _id = param.get('_id');
+      this.cateService.getCate(_id).subscribe(data => {
+        this.cate = data
         this.cateForm.patchValue({
-          name: cate.name
+          name: data.name
         })
       })
     })
   }
   onHandleEdit() {
-    if(this.cateForm.valid) {
-      const cate: ICate = {
+    if(this.cateForm.value) {
+      const product: ICate= {
         _id: this.cate._id,
         name: this.cateForm.value.name || ""
       }
-      this.cateService.updateCate(cate).subscribe(data => {
+      this.cateService.updateCate(product).subscribe(data => {
         console.log(data)
+        alert('Cap nhat thanh cong')
       })
     }
   }
-}
+  }

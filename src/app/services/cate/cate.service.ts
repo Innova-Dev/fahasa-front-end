@@ -24,7 +24,7 @@ export class CateService {
   addCate(categories: ICate): Observable<ICate> {
     return this.http.post<ICate>(apiUrl, categories);
   }
-  updateCate(categories:ICate): Observable<ICate>{
-    return this.http.put<ICate>(`http://127.0.0.1:8088/api/categories/${categories._id}`, categories)
+  updateCate(categories:ICate): Observable<ICate> {
+    return this.http.patch<ICate>(`http://localhost:8088/categories/${categories._id}`, categories)
   }
 }
