@@ -28,19 +28,13 @@ const routes: Routes = [
   { path: 'admin', component: LayoutAdminComponent,canActivate: [AuthGuard], children: [
     {path:'categories',children:[
       {path:'',component:ListCateComponent},
-
       {path:'add',component:CateComponent},
- 
       {path:'edit/:_id',component:EditCateComponent}
-
     ]},
     {path:'products',children:[
       {path:'',component:ProductListComponent},
-
       {path:'add',component:ProductAddComponent},
- 
       {path:':_id/edit',component:ProductEditComponent}
-
     ]}
   ]
   }

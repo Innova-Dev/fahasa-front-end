@@ -27,6 +27,11 @@ export class CartService {
     return this.cartItemCountSubject;
   }
 
+  setCartItems(items: number): void {
+    this.cartItemCount = items;
+  }
+  
+
   addToCart(item: any): void {
     this.cartItems.push(item);
     this.cartItemCount++;
@@ -48,6 +53,17 @@ export class CartService {
     }
     return Object.values(uniqueObjects); // Trả về mảng các đối tượng duy nhất
   }
+
+  createArrayByQuantity(arr: any[]) : void {
+    let newArr: any[] = [];
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < arr[i].total; j++) {
+        newArr.push(arr[i]);
+      }
+    }
+    this.cartItems = newArr;
+  }
+
   calculateTotalPrice(arr: IProduct[]) : number {
     let totalPrice = 0;
   
@@ -59,7 +75,14 @@ export class CartService {
     }
     return totalPrice;
   }
-
+  
+  removeCartItem(id: string | number | undefined): any[] {
+    this.cartItems = this.cartItems.filter(item => item._id !== id);
+    this.cartItemCount = this.cartItems.length;
+    this.cartItemCountSubject.next(this.cartItemCount);
+    this.updateLocalStorage();
+    return this.cartItems;
+  }
   
 
   private updateLocalStorage(): void {
