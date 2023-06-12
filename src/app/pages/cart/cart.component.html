@@ -54,6 +54,9 @@
                     </p>
                   </div>
                 </div>
+                <div class="edit-cart" (click)="removeCartItem(product._id)">
+                  <i class="fa-solid fa-trash-can"></i>
+                </div>
               </div>
               <div class="hr">
                 <p class=""></p>
@@ -67,8 +70,11 @@
           <h3>Tổng số tiền</h3>
           <p>{{ total }}đ</p>
         </div>
-        <button class="btn-pay">Mua ngay</button>
+        <button class="btn-pay" (click)="onHandleBuy()">Mua ngay</button>
         <p class="title-sale">(Giảm giá trên web chỉ áp dụng cho bán lẻ)</p>
+        <b class="title-sale" role="alert" *ngIf="message">
+          {{ message }}
+        </b>
       </div>
     </div>
   </div>

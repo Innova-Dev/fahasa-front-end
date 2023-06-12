@@ -6,9 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout/layout.component';
 import {  HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-// import { ProductComponent } from './pages/product/product/product.component';
-// import { DetailProductComponent } from './pages/detail-product/detail-product/detail-product.component';
-// import { CartComponent } from './pages/carts/cart/cart.component';
 import { ProductComponent } from './pages/product/product.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
@@ -24,8 +21,6 @@ import { ProductAddComponent } from './pages/admin/products/product-add/product-
 import { ProductEditComponent } from './pages/admin/products/product-edit/product-edit.component';
 import { ProductListComponent } from './pages/admin/products/product-list/product-list.component';
 import { ProductItemComponent } from './pages/admin/products/product-item/product-item.component';
-
-import { CartService } from './services/cart.service';
 import { AuthInterceptor } from './services/auth.interceptor';
 
 @NgModule({

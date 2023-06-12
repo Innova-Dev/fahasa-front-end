@@ -39,7 +39,7 @@
         <li>
           <i class="fa-solid fa-user"></i><br />
           <ng-container *ngIf="isLogin; else auth">
-            <a routerLink="auth">{{ userInfo.name }}</a>
+            <a routerLink="#">{{ userInfo.name }}</a>
           </ng-container>
           <ng-template #auth>
             <a routerLink="auth">Tài khoản</a>

@@ -1332,94 +1332,104 @@ input[type="checkbox"]:checked {
         min-width: 420px;
     }
 }
+
 .fa-cart-shopping {
     position: relative;
 }
+
 .badge {
-    position: absolute;
-    top: 65px;
-    right: 360px;
     border: solid 2px #fff;
     padding: 0px 4px;
     background: #c92127;
     color: white;
     border-radius: 50%;
     font-size: 13px;
-  }
-  form {
+}
+
+form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-  }
-  
-  label {
+}
+
+label {
     margin-bottom: 5px;
-  }
-  
-  input[type="text"] {
+}
+
+input[type="text"] {
     width: 300px;
     padding: 5px;
     margin-bottom: 10px;
-  }
-  
-  button[type="submit"] {
+}
+
+button[type="submit"] {
     padding: 10px 20px;
     background-color: #4caf50;
     color: white;
     border: none;
     cursor: pointer;
-  }
-  
-  button[type="submit"]:disabled {
+}
+
+button[type="submit"]:disabled {
     background-color: lightgray;
     cursor: not-allowed;
-  }
+}
 
 .confirm-pay {
     background: #fff;
-    box-shadow: 0px -4px 10px -4px rgba(0,0,0,0.66);
+    box-shadow: 0px -4px 10px -4px rgba(0, 0, 0, 0.66);
     position: fixed;
     bottom: 0;
     width: 79%;
     padding: 20px;
 }
+
 .confirm-total {
     padding: 5px;
     display: flex;
     justify-content: end;
 }
+
 .confirm-total p:nth-child(1) {
     padding-right: 50px;
 }
+
 .confirm-total p {
     padding: 0 10px;
 }
+
 .confirm-vat {
     padding: 5px;
     display: flex;
     justify-content: end;
 }
+
 .confirm-vat h3 {
     padding-right: 50px;
 }
+
 .confirm-vat p {
     padding: 0 10px;
     color: #F39801;
     font-weight: 600;
 }
+
 .come-back {
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
 }
+
 .come-back a {
     font-weight: 600;
     color: #000;
     text-decoration: none;
 }
+
 .come-back a i {
     padding: 0 10px;
 }
+
 .come-back button {
     background: #C92127;
     color: #fff;
@@ -1430,6 +1440,7 @@ input[type="checkbox"]:checked {
     cursor: pointer;
     border-radius: 10px;
 }
+
 .btn-warning {
     background-color: #ffc107;
     padding: 10px 15px;
@@ -1438,6 +1449,7 @@ input[type="checkbox"]:checked {
     margin: 10px 0;
     cursor: pointer;
 }
+
 .container {
     margin-top: 20px;
     background-color: #fff;
@@ -1445,18 +1457,23 @@ input[type="checkbox"]:checked {
     padding: 20px;
     border-radius: 10px;
 }
+
 table {
     border-collapse: collapse;
     width: 100%;
 }
-td, th {
+
+td,
+th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
 }
+
 table tr:hover {
     background-color: rgba(0, 0, 0, 0.075);
 }
+
 .btn-danger {
     background-color: #dc3545;
     color: #fff;
@@ -1466,6 +1483,7 @@ table tr:hover {
     cursor: pointer;
     margin-right: 10px;
 }
+
 .btn-success {
     background-color: #198754;
     color: #fff;
@@ -1475,10 +1493,12 @@ table tr:hover {
     cursor: pointer;
     margin-right: 10px;
 }
+
 .form-label {
     font-weight: 600;
     padding: 10px 0;
 }
+
 .form-outline .form-control {
     background-color: #f1f1f1;
     border: solid 1px #ccc;
@@ -1488,32 +1508,39 @@ table tr:hover {
     outline: none;
     padding: 10px 20px;
 }
+
 .form-control:focus {
     border-color: #80bdff;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
 }
+
 .form-cate .btn-primary {
     color: #FFF;
     background-color: #17a2b8;
     border-radius: 7px;
     font-size: 15px;
 }
+
 .form-cate .btn-primary:hover {
     opacity: 0.9;
 }
+
 .auth-icon {
     text-align: center;
 }
+
 .auth-icon i {
     border: solid 1px #ccc;
     padding: 10px;
     border-radius: 50%;
     margin: 0 5px;
 }
+
 .input-group-login {
     margin-top: 10px;
 }
-.input-group-login input{
+
+.input-group-login input {
     background-color: #eee;
     border: none;
     padding: 12px 15px;
@@ -1522,27 +1549,33 @@ table tr:hover {
     border-radius: 5px;
     outline: none;
 }
-.input-group-login input:focus{
+
+.input-group-login input:focus {
     border-color: #80bdff;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
 }
+
 .auth-btn {
     width: 100%;
     text-align: center;
 }
+
 .auth-btn button {
     border-radius: 8px;
     padding: 13px 30px;
     font-size: 16px;
 }
-html .auth-btn button  {
+
+html .auth-btn button {
     background-color: #ff4b2b;
 }
+
 .col {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
 }
+
 html .boxung {
     margin-top: 19px;
 }
