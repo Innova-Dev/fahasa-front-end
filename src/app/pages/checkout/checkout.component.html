@@ -1,6 +1,6 @@
 
 <div id="container"> 
-<div class="check-pay">
+<div *ngIf="!isLogin" class="check-pay">
     <p class="danger"><i class="fa-solid fa-triangle-exclamation"></i></p>
     <div class="check-login">
         <p>Bạn đã là thành viên?</p>
@@ -45,14 +45,9 @@
     <h3 style="margin-bottom: 10px;">ĐỊA CHỈ GIAO HÀNG</h3>
     <hr>
     <div class="option-method">
-        <input type="radio">
+        <input type="radio" checked>
         <img width="85" src="https://cdn0.fahasa.com/skin/frontend/base/default/images/payment_icon/ico_cashondelivery.svg?q=102238" alt="">
         <p>Thanh toán bằng tiền mặt khi nhận hàng</p>
-    </div>
-    <div class="option-method">
-        <input type="radio">
-        <img width="85" src="https://cdn0.fahasa.com/skin/frontend/base/default/images/payment_icon/ico_zalopayatm.svg?q=102238" alt="">
-        <p>ATM / Internet Banking</p>
     </div>
 </div>
 
@@ -60,18 +55,18 @@
     <div class="confirm">
         <div class="confirm-total">
             <p>Thành tiền</p>
-            <p class="confirm-price">89.740 đ</p>
+            <p class="confirm-price">{{total}} đ</p>
         </div>
         <div class="confirm-vat">
             <h3>Tổng Số Tiền (gồm VAT)</h3>
-            <p class="confirm-vat">89.740 đ</p>
+            <p class="confirm-vat">{{total}} đ</p>
         </div>
     </div>
     <hr>
     <div class="confirm-btn">
         <div class="come-back">
             <a href=""><i class="fa-solid fa-arrow-left"></i>Quay về giỏ hàng</a>
-            <button>Xác nhận thanh toán</button>
+            <button (click)="confirmBuy()">Xác nhận thanh toán</button>
         </div>
     </div>
 </div>
@@ -100,11 +95,7 @@
                 </div>
                 <div class="quantity-total">
                   <div class="quantity-detail">
-                    <input
-                      type="number"
-                      name=""
-                      [value]="product.total"
-                    />
+                    Số lượng: {{product.total}}
                   </div>
                   <div class="total">
                     <p

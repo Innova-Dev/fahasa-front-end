@@ -15,6 +15,7 @@ import { ProductListComponent } from './pages/admin/products/product-list/produc
 import { ProductEditComponent } from './pages/admin/products/product-edit/product-edit.component';
 import { ProductAddComponent } from './pages/admin/products/product-add/product-add.component';
 import { AuthGuard } from './auth.guard';
+import { PurchaseHistoryComponent } from './pages/admin/purchase-history/purchase-history.component';
 const routes: Routes = [
   {
     path: '', component: LayoutComponent, children: [
@@ -35,6 +36,10 @@ const routes: Routes = [
       {path:'',component:ProductListComponent},
       {path:'add',component:ProductAddComponent},
       {path:':_id/edit',component:ProductEditComponent}
+    ]},
+    {path:'purchase-history',children:[
+      {path:'',component:PurchaseHistoryComponent}
+     
     ]}
   ]
   }
