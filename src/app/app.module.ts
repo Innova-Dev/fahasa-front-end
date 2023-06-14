@@ -22,7 +22,7 @@ import { ProductEditComponent } from './pages/admin/products/product-edit/produc
 import { ProductListComponent } from './pages/admin/products/product-list/product-list.component';
 import { ProductItemComponent } from './pages/admin/products/product-item/product-item.component';
 import { AuthInterceptor } from './services/auth.interceptor';
-
+import { PurchaseHistoryComponent } from './pages/admin/purchase-history/purchase-history.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,10 +40,11 @@ import { AuthInterceptor } from './services/auth.interceptor';
     ProductAddComponent,
     ProductEditComponent,
     ProductListComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    PurchaseHistoryComponent
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
